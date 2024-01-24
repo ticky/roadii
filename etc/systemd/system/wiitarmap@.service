@@ -1,6 +1,0 @@
-[Unit]
-Description=Wii Guitar Hero guitar mapping service
-
-[Service]
-Type=oneshot
-ExecStart=/home/deck/bin/wiitarmap --evsieve-path "/home/deck/bin/evsieve" --kernel-name "%I"

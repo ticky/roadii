@@ -1,2 +1,0 @@
-# Detect Wiimote with Guitar attached
-ACTION=="add", KERNEL=="input[0-9]*", ATTRS{name}=="Nintendo Wii Remote Guitar", RUN+="/usr/bin/logger wiitar %p detected", TAG+="systemd", PROGRAM="/usr/bin/systemd-escape -p --template=wiitarmap@.service \"%k\"", ENV{SYSTEMD_WANTS}+="%c"
