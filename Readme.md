@@ -4,18 +4,26 @@ Automatic Linux Wii guitar remapping using `evsieve`
 
 ## Requirements
 
-This is built with SteamOS as its primary consumer. Specifics will differ per distro. I develop in an Arch Linux container using [Distrobox](https://distrobox.it).
+This is built with SteamOS as its primary consumer. Specifics will differ per distro. I develop for SteamOS in an Arch Linux container using [Distrobox](https://distrobox.it), and for Bazzite in a Fedora toolbox container using [toolbx](https://containertoolbx.org).
 
 - Rust
-- `libudev` (in `core/systemd-libs` on Arch Linux)
+- `libudev`
 - [`evsieve`](https://github.com/KarsMulder/evsieve)
-  - `libevdev` (in `libevdev` on Arch Linux)
-- `pkg-config` (in `pkgconf` on Arch Linux)
+  - `libevdev`
+- `pkg-config`
 
-### Arch Linux one-liner
+### One-Liners
+
+#### Arch Linux
 
 ```bash
 sudo pacman -S rust systemd-libs libevdev pkgconf
+```
+
+#### Fedora
+
+```bash
+sudo dnf install cargo systemd-devel libevdev libevdev-devel
 ```
 
 ### Hardware
