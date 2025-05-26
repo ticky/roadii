@@ -30,6 +30,21 @@ sudo dnf install cargo systemd-devel libevdev libevdev-devel
 
 This is tested with a Wii MotionPlus Wiimote, and a Guitar Hero World Tour guitar. It should work with the other Guitar Hero Wii guitars (which have a slot for a Wiimote), and other Wiimotes, as long as both are recognised by the Linux kernel, though they have not been tested.
 
+## Compiling / installing
+```bash
+# Download source & extract
+wget https://github.com/ticky/roadii/archive/refs/heads/main.tar.gz -O roadii-main.tar.gz
+tar -xzf roadii-main.tar.gz
+
+# Enter directory & compile
+cd roadii-main
+cargo build --release
+
+# Install roadii to /home/deck/bin
+sudo install -m 755 -t /home/deck/bin target/release/roadii
+# The previous line can probably be replaced with chmod && cp if need be
+```
+
 ## Setup
 
 Provided in the `etc` folder are an example udev rule and systemd service to automatically run Roadii when a supported Wii guitar controller is connected. This presumes you are using SteamOS, adapting to other Linux systems is left as an exercise for the reader.
